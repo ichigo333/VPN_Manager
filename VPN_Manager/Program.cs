@@ -10,9 +10,9 @@ namespace VPN_Manager {
       var vpnPath = "C:\\Program Files\\pia_manager\\pia_manager.exe";
 
       while (true) {
+        KillApplication("pia_nw");
         KillApplication("pia_manager.exe");
-        //KillApplication("pia_nw");
-        //KillApplication("openvpn");
+
         Thread.Sleep(10000);
         StartVpn(vpn, vpnPath);
 
@@ -48,7 +48,6 @@ namespace VPN_Manager {
       var processes = Process.GetProcessesByName(name);
  
       foreach (var process in processes) {
-        process.
         process.Kill();
       }
     }
